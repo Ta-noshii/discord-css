@@ -25,9 +25,11 @@
     width: -webkit-fill-available;
 }
 
-/* make sure call ui is properly rounded */
+/* make sure call and current active game ui is properly rounded */
 .theme-dark.custom-theme-background .container_adcaac,
-.theme-light.custom-theme-background .container_adcaac {
+.theme-light.custom-theme-background .container_adcaac,
+.theme-dark .panel_bf1a22,
+.theme-light .panel_bf1a22 {
     /* if theme isn't specified the style will get overridden */
     background: transparent none repeat 0 0/auto auto padding-box border-box scroll;
 }
