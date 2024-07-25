@@ -1,27 +1,27 @@
 /* position unread badge properly */
-.unreadMentionsIndicatorBottom_fea3ef {
+[class^=unreadMentionsIndicatorBottom] {
     bottom: 60px;
     /* to not overlay on top of the call ui */
     z-index: 2;
 }
 
 /* remove ui padding */
-.visual-refresh .appAsidePanelWrapper_bd26cc {
+.visual-refresh [class^=appAsidePanelWrapper] {
     padding: 0;
 }
 
 /* hide unfinished ui discord is working on */
-.visual-refresh .wrapper_fea3ef {
+.visual-refresh [class^=wrapper] {
     padding-bottom: 0;
 }
 
 /* fit the profile (& call) ui properly */
-.visual-refresh .panels_a4d4d9 {
+.visual-refresh [class^=panels] {
     width: 300px;
 }
 
 /* make profile button use the entire space on the bottom left */
-.avatarWrapper_b2ca13 {
+[class^=avatarWrapper] {
     width: -webkit-fill-available;
 }
 
@@ -33,20 +33,20 @@
 }
 
 /* fix color scheming with themes */
-.visual-refresh .privateChannels_f0963d,
+.visual-refresh [class^=privateChannels],
 .visual-refresh .container_ee69e0,
 .visual-refresh .scroller_c47fa9 {
     background: var(--bg-overlay-3,var(--background-secondary));
 }
 
 /* align personal profile properly */
-.accountProfilePopoutWrapper_b2ca13 {
+[class^=accountProfilePopoutWrapper] {
     /* tested on various screen sizes */
     left: -5px;
 }
 
 /* fix unread badges on icons on the top right */
-svg:has(+ .iconBadge_fc4f04) > foreignObject > svg {
+svg:has(+ [class^=iconBadge]) > foreignObject > svg {
     /*
     currently not otherwise possible to fix to my knowledge
     without adding another element
