@@ -1,0 +1,11 @@
+@import url("https://raw.githubusercontent.com/Ta-noshii/discord-css/main/snippets/FixVisualRefresh.css");
+
+/* remove ui padding */
+.visual-refresh [class^=appAsidePanelWrapper] {
+    padding: 0;
+}
+
+/* fit the profile (& call) ui properly */
+.visual-refresh [class^=panels] {
+    width: 300px;
+}

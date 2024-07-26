@@ -5,24 +5,31 @@
     z-index: 2;
 }
 
-/* remove ui padding */
-.visual-refresh [class^=appAsidePanelWrapper] {
-    padding: 0;
-}
-
 /* hide unfinished ui discord is working on */
 .visual-refresh [class^=wrapper] {
     padding-bottom: 0;
 }
 
-/* fit the profile (& call) ui properly */
-.visual-refresh [class^=panels] {
-    width: 300px;
+/* recolor ui padding to match theme */
+#app-mount {
+    background: var(--bg-overlay-app-frame,var(--background-tertiary));
 }
 
 /* make profile button use the entire space on the bottom left */
 [class^=avatarWrapper] {
     width: -webkit-fill-available;
+}
+
+/* remove coloring that would mess up rounding below */
+[class^=sidebar] {
+    background: unset;
+}
+  
+/* round unrounded corners of channel list, dms list and settings menu to match theme */
+.container_ee69e0,
+[class^=privateChannels],
+[class^=layer] {
+    border-radius: 8px;
 }
 
 /* make sure call and current active game ui is properly rounded */
