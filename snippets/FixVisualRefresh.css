@@ -10,9 +10,9 @@
     width: -webkit-fill-available;
 }
 
-/* remove coloring that would mess up rounding below */
-[class^=sidebar] {
-    background: unset;
+/* round server banner */
+[class^=animatedContainer] {
+    border-radius: 7px 7px 0 0;
 }
 
 /* align personal profile properly */
@@ -49,9 +49,9 @@
     padding-bottom: 0;
 }
 
-/* round server banner */
-.container_ee69e0 {
-    border-radius: 7px 7px 0 0;
+/* remove coloring that would mess up rounding below */
+.visual-refresh [class^=sidebar] {
+    background: unset;
 }
 
 /* recolor ui padding to match theme */
