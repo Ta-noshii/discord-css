@@ -5,16 +5,6 @@
     z-index: 2;
 }
 
-/* hide unfinished ui discord is working on */
-.visual-refresh [class^=wrapper] {
-    padding-bottom: 0;
-}
-
-/* recolor ui padding to match theme */
-#app-mount {
-    background: var(--bg-overlay-app-frame,var(--background-tertiary));
-}
-
 /* make profile button use the entire space on the bottom left */
 [class^=avatarWrapper] {
     width: -webkit-fill-available;
@@ -24,12 +14,18 @@
 [class^=sidebar] {
     background: unset;
 }
-  
+
+/* align personal profile properly */
+[class^=accountProfilePopoutWrapper] {
+    /* tested on various screen sizes */
+    left: -5px;
+}
+
 /* round unrounded corners of channel list, dms list and settings menu to match theme */
 .container_ee69e0,
 [class^=privateChannels],
 [class^=layer] {
-    border-radius: 8px;
+    border-radius: 7px;
 }
 
 /* make sure call and current active game ui is properly rounded */
@@ -48,10 +44,19 @@
     background: var(--bg-overlay-3,var(--background-secondary));
 }
 
-/* align personal profile properly */
-[class^=accountProfilePopoutWrapper] {
-    /* tested on various screen sizes */
-    left: -5px;
+/* hide unfinished ui discord is working on */
+.visual-refresh [class^=wrapper] {
+    padding-bottom: 0;
+}
+
+/* round server banner */
+.container_ee69e0 {
+    border-radius: 7px 7px 0 0;
+}
+
+/* recolor ui padding to match theme */
+#app-mount {
+    background: var(--bg-overlay-app-frame,var(--background-tertiary));
 }
 
 /* fix unread badges on icons on the top right */
