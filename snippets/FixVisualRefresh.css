@@ -1,7 +1,5 @@
-/* position unread badge properly */
+/* keep unread button from overlaying on top of the call/game ui */
 [class^=unreadMentionsIndicatorBottom] {
-    bottom: 60px;
-    /* to not overlay on top of the call ui */
     z-index: 2;
 }
 
@@ -12,7 +10,7 @@
 
 /* round server banner */
 [class^=animatedContainer] {
-    border-radius: 7px 7px 0 0;
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
 }
 
 /* align personal profile properly */
@@ -21,19 +19,40 @@
     left: -5px;
 }
 
-/* round unrounded corners of channel list, dms list and settings menu to match theme */
-.container_ee69e0,
-[class^=privateChannels],
-[class^=layer] {
-    border-radius: 7px;
+/* remove coloring that would mess up rounding */
+[class^=layer_] {
+  background: unset;
 }
 
-/* make sure call and current active game ui is properly rounded */
+/* re-add that left side "padding" as margin when the settings menu is open */
+[class^=layer] + [class^=layer] {
+    margin-left: var(--custom-margin-margin-small);
+}
+
+/* adjust server list bottom padding to fit ui better */
+.visual-refresh [class*=guilds] {
+    padding-bottom: calc(var(--custom-app-panels-height,5px) - 5px);
+}
+
+/* round unrounded corners of channel list, dms list and settings menu to match theme */
+.container_ee69e0,
+.visual-refresh [class^=sidebar],
+[class^=privateChannels],
+[class^=layer],
+[class^=standardSidebarView] {
+    border-radius: var(--radius-sm);
+}
+
+/*
+  make sure call and current active game ui is properly rounded
+  and make server list bottom padding space transparent to match theme
+*/
 .theme-dark.custom-theme-background .container_adcaac,
 .theme-light.custom-theme-background .container_adcaac,
 .theme-dark .panel_bf1a22,
-.theme-light .panel_bf1a22 {
-    /* if theme isn't specified the style will get overridden */
+.theme-light .panel_bf1a22,
+.visual-refresh .wrapper_fea3ef
+{
     background: transparent none repeat 0 0/auto auto padding-box border-box scroll;
 }
 
@@ -44,19 +63,14 @@
     background: var(--bg-overlay-3,var(--background-secondary));
 }
 
-/* hide unfinished ui discord is working on */
-.visual-refresh [class^=wrapper] {
-    padding-bottom: 0;
+/* remove left-side padding so unread badges fit the corner */
+.visual-refresh [class^=appAsidePanelWrapper] {
+    padding-left: unset;
 }
 
-/* remove coloring that would mess up rounding below */
-.visual-refresh [class^=sidebar] {
-    background: unset;
-}
-
-/* recolor ui padding to match theme */
-#app-mount {
-    background: var(--bg-overlay-app-frame,var(--background-tertiary));
+/* resize mini profile holder to match channel list */
+.visual-refresh [class^=panels] {
+    width: 303px; /* is also normally an arbitrary value */
 }
 
 /* fix unread badges on icons on the top right */
@@ -68,4 +82,9 @@ svg:has(+ [class^=iconBadge]) > foreignObject > svg {
     position: absolute;
     left: 4px;
     top: 4px;
+}
+
+/* make ui padding color match theme */
+#app-mount {
+    background: var(--bg-overlay-app-frame,var(--background-tertiary));
 }
