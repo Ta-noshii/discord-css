@@ -35,11 +35,6 @@
     background: unset;
 }
 
-/* re-add that left side "padding" as margin when the settings menu is open */
-[class^=layer] + [class^=layer] {
-    margin-left: var(--custom-margin-margin-small);
-}
-
 /* adjust server list bottom padding to fit ui better */
 .visual-refresh [class*=guilds] {
     padding-bottom: calc(var(--custom-app-panels-height,5px) + 5px);
