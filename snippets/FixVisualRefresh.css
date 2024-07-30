@@ -11,6 +11,12 @@
 /* round server banner */
 [class^=animatedContainer] {
     border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    width: 100%;
+}
+
+/* adjust banner image width to fit */
+[class^=bannerIm] {
+    width: 100%;
 }
 
 /* align personal profile properly */
@@ -19,9 +25,14 @@
     left: -5px;
 }
 
+/* fix dms in dms list width */
+[class^=channel] {
+    max-width: unset;
+}
+
 /* remove coloring that would mess up rounding */
 [class^=layer_] {
-  background: unset;
+    background: unset;
 }
 
 /* re-add that left side "padding" as margin when the settings menu is open */
@@ -31,7 +42,7 @@
 
 /* adjust server list bottom padding to fit ui better */
 .visual-refresh [class*=guilds] {
-    padding-bottom: calc(var(--custom-app-panels-height,5px) - 5px);
+    padding-bottom: calc(var(--custom-app-panels-height,5px) + 5px);
 }
 
 /* round unrounded corners of channel list, dms list and settings menu to match theme */
@@ -39,7 +50,8 @@
 .visual-refresh [class^=sidebar],
 [class^=privateChannels],
 [class^=layer],
-[class^=standardSidebarView] {
+[class^=standardSidebarView],
+[class^=chat] {
     border-radius: var(--radius-sm);
 }
 
@@ -51,9 +63,31 @@
 .theme-light.custom-theme-background .container_adcaac,
 .theme-dark .panel_bf1a22,
 .theme-light .panel_bf1a22,
-.visual-refresh .wrapper_fea3ef
-{
+.visual-refresh .wrapper_fea3ef {
     background: transparent none repeat 0 0/auto auto padding-box border-box scroll;
+}
+
+/* revert channel icon size */
+.visual-refresh .wrapper_c5f96a, .visual-refresh .svg_c5f96a {
+    width: 48px;
+    height: 48px;
+}
+
+/* ugly border for no reason at send message thing */
+.visual-refresh [class^=form] {
+    border-top: unset;
+}
+
+/* add proper coloring */
+.visual-refresh [class^=channelTextArea],
+.visual-refresh [class^=form] {
+    background-color: initial;
+}
+
+/* fix channel list padding */
+.visual-refresh [class^=sidebar] {
+    margin-top: 0;
+    margin-right: 8px;
 }
 
 /* fix color scheming with themes */
@@ -66,25 +100,4 @@
 /* remove left-side padding so unread badges fit the corner */
 .visual-refresh [class^=appAsidePanelWrapper] {
     padding-left: unset;
-}
-
-/* resize mini profile holder to match channel list */
-.visual-refresh [class^=panels] {
-    width: 303px; /* is also normally an arbitrary value */
-}
-
-/* fix unread badges on icons on the top right */
-svg:has(+ [class^=iconBadge]) > foreignObject > svg {
-    /*
-    currently not otherwise possible to fix to my knowledge
-    without adding another element
-    */
-    position: absolute;
-    left: 4px;
-    top: 4px;
-}
-
-/* make ui padding color match theme */
-#app-mount {
-    background: var(--bg-overlay-app-frame,var(--background-tertiary));
 }
