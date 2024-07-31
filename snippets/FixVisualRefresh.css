@@ -35,6 +35,11 @@
     background: unset;
 }
 
+/* remove annoying spacing above chat bar */
+.visual-refresh [class^=channelTextArea] {
+    padding-top: unset;
+}
+
 /* adjust server list bottom padding to fit ui better */
 .visual-refresh [class*=guilds] {
     padding-bottom: calc(var(--custom-app-panels-height,5px) + 5px);
