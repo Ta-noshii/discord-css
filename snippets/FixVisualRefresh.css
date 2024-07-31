@@ -1,3 +1,4 @@
+
 /* keep unread button from overlaying on top of the call/game ui */
 [class^=unreadMentionsIndicatorBottom] {
     z-index: 2;
@@ -10,7 +11,7 @@
 
 /* round server banner */
 [class^=animatedContainer] {
-    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    border-radius: var(--radius-sm) 0 0 0;
     width: 100%;
 }
 
@@ -36,23 +37,8 @@
 }
 
 /* remove annoying spacing above chat bar */
-.visual-refresh [class^=channelTextArea] {
+.theme-dark.theme-dark.custom-theme-background.visual-refresh .form_a7d72e {
     padding-top: unset;
-}
-
-/* adjust server list bottom padding to fit ui better */
-.visual-refresh [class*=guilds] {
-    padding-bottom: calc(var(--custom-app-panels-height,5px) + 5px);
-}
-
-/* round unrounded corners of channel list, dms list and settings menu to match theme */
-.container_ee69e0,
-.visual-refresh [class^=sidebar],
-[class^=privateChannels],
-[class^=layer],
-[class^=standardSidebarView],
-[class^=chat] {
-    border-radius: var(--radius-sm);
 }
 
 /*
@@ -68,7 +54,8 @@
 }
 
 /* revert channel icon size */
-.visual-refresh .wrapper_c5f96a, .visual-refresh .svg_c5f96a {
+.visual-refresh .wrapper_c5f96a,
+.visual-refresh .svg_c5f96a {
     width: 48px;
     height: 48px;
 }
@@ -81,17 +68,12 @@
 /* add proper coloring */
 .visual-refresh [class^=channelTextArea],
 .visual-refresh [class^=form] {
-    background-color: initial;
-}
-
-/* fix channel list padding */
-.visual-refresh [class^=sidebar] {
-    margin-top: 0;
-    margin-right: 8px;
+    background-color: var(--bg-overlay-1,var(--background-secondary-alt));
 }
 
 /* fix color scheming with themes */
 .visual-refresh [class^=privateChannels],
+.visual-refresh .sidebar_a4d4d9,
 .visual-refresh .container_ee69e0,
 .visual-refresh .scroller_c47fa9 {
     background: var(--bg-overlay-3,var(--bg-base-tertiary, var(--background-secondary)));
