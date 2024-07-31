@@ -31,6 +31,11 @@
     max-width: unset;
 }
 
+/* fix spacing of the typing and slowmode indicators below chat bar */
+[class^=typing] {
+    bottom: -8px;
+}
+
 /* remove coloring that would mess up rounding */
 [class^=layer_] {
     background: unset;
@@ -63,6 +68,11 @@
 /* ugly border for no reason at send message thing */
 .visual-refresh [class^=form] {
     border-top: unset;
+}
+
+/* fix spacing of the typing and slowmode indicators below chat bar */
+.visual-refresh .form_a7d72e {
+    padding-bottom: 17px;
 }
 
 /* add proper coloring */
