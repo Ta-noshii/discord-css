@@ -32,9 +32,9 @@
 }
 
 /* fix spacing of the typing and slowmode indicators below chat bar */
-[class^=typing] {
+/* [class^=typing] {
     bottom: -8px;
-}
+} */
 
 /* remove coloring that would mess up rounding */
 [class^=layer_] {
@@ -71,9 +71,9 @@
 }
 
 /* fix spacing of the typing and slowmode indicators below chat bar */
-.visual-refresh .form_a7d72e {
+/* .visual-refresh .form_a7d72e {
     padding-bottom: 17px;
-}
+} */
 
 /* add proper coloring */
 .visual-refresh [class^=channelTextArea],
