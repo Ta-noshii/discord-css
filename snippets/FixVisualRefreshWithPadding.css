@@ -11,17 +11,28 @@
     margin-left: var(--custom-margin-margin-small);
 }
 
-/* resize mini profile holder to match channel list */
-.visual-refresh [class^=panels] {
-    width: 366px; /* is also normally an arbitrary value */
-}
-
 /* adjust serverlist padding */
 .visual-refresh [class*=guilds] {
-    padding-bottom: calc(var(--custom-app-panels-height,5px) - 5px);
+    margin-bottom: calc(var(--custom-app-panels-height,5px) - 5px);
 }
 
 /* make ui padding color match theme */
 #app-mount {
     background: var(--bg-overlay-app-frame,var(--background-tertiary));
+}
+
+/* round settings corners */
+[class^=layer],
+[class^=standardSidebarView] {
+    border-radius: var(--radius-sm);
+}
+
+/* round sidebar tl corner */
+.visual-refresh [class^=sidebar] {
+    border-radius: var(--radius-sm) 0 0 0;
+}
+
+/* round chat tr br corners */
+[class^=chat] {
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
