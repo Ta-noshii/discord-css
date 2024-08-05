@@ -50,8 +50,8 @@
   make sure call and current active game ui is properly rounded
   and make server list bottom padding space transparent to match theme
 */
-.theme-dark.custom-theme-background .container_adcaac,
-.theme-light.custom-theme-background .container_adcaac,
+.custom-theme-background .container_adcaac,
+.custom-theme-background .container_c29ea9,
 .theme-dark .panel_bf1a22,
 .theme-light .panel_bf1a22,
 .visual-refresh .wrapper_fea3ef {
